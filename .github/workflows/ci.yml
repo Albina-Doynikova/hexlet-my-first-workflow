@@ -7,11 +7,17 @@ jobs:
   # их может быть больше одного
   build:
     # операционная система для работы воркфлоу
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps: # список шагов, которые надо выполнить
       # экшен — выполняет какую-то задачу
       # checkout — клонирует репозиторий
-      - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
       # run – произвольная bash-команда
       # ls -la выведет содержимое текущего репозитория
-      - run: make say-hello
+    - name: Install make
+      run: |
+        brew --version  # Проверяем версию Homebrew
+        brew install make  # Устанавливаем make
+        make --version  # Проверяем, что make установлен
+    - run: make say-hello
