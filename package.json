@@ -1,0 +1,27 @@
+{
+  "name": "hexlet-my-first-workflow",
+  "version": "1.0.0",
+  "description": "[![show-directory](https://github.com/Albina-Doynikova/hexlet-my-first-workflow/actions/workflows/ci.yml/badge.svg)](https://github.com/Albina-Doynikova/hexlet-my-first-workflow/actions/workflows/ci.yml)",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm install",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Albina-Doynikova/hexlet-my-first-workflow.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Albina-Doynikova/hexlet-my-first-workflow/issues"
+  },
+  "homepage": "https://github.com/Albina-Doynikova/hexlet-my-first-workflow#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "jest": "^27.4.3"
+  }
