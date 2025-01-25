@@ -8,8 +8,6 @@
     "test": "jest",
     "lint": "eslint ."
   },
-
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Albina-Doynikova/hexlet-my-first-workflow.git"
@@ -25,3 +23,4 @@
     "eslint": "^7.32.0",
     "jest": "^27.4.3"
   }
+}
