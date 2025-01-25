@@ -1,33 +1,40 @@
 # file: .github/workflows/show-directory.yml
 name: show-directory
+
 # on – определяет события, которые запускают воркфлоу
 on: push
+
 jobs:
   # build – произвольно выбранное имя задания
   # их может быть больше одного
   build:
     # операционная система для работы воркфлоу
     runs-on: macos-latest
-    steps: # список шагов, которые надо выполнить
+
+    steps:  # список шагов, которые надо выполнить
       # экшен — выполняет какую-то задачу
       # checkout — клонирует репозиторий
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      # run – произвольная bash-команда
-      # ls -la выведет содержимое текущего репозитория
-    - name: Install make
-      run: |
-        brew --version  # Проверяем версию Homebrew
-        brew install make  # Устанавливаем make
-        make --version  # Проверяем, что make установлен
-    - run: make say-hello
-    - name: Set up project
-    run: make setup
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-  # Шаг 4: Запуск тестов
-    - name: Run tests
-    run: make test
+      # Шаг 2: Устанавливаем make
+      - name: Install make
+        run: |
+          brew --version  # Проверяем версию Homebrew
+          brew install make  # Устанавливаем make
+          make --version  # Проверяем, что make установлен
 
-  # Шаг 5: Запуск линтера
-    - name: Run linter
-    run: make lint
+      # Шаг 3: Выполнение команды make say-hello
+      - run: make say-hello
+
+      # Шаг 4: Сетап проекта
+      - name: Set up project
+        run: make setup
+
+      # Шаг 5: Запуск тестов
+      - name: Run tests
+        run: make test
+
+      # Шаг 6: Запуск линтера
+      - name: Run linter
+        run: make lint
